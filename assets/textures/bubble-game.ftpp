@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "version": "0.6.7"
+  },
+  "savePath": "D:\\Djz\\Michail\\bubbles-game-2\\assets\\textures",
+  "images": [
+    {
+      "name": "bg-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/bg-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "bomb-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/bomb-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "bubble-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/bubble-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "exitbtn-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/exitbtn-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "header-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/header-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "heart-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/heart-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "heart2-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/heart2-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "menu-bg.jpg",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/menu-bg.jpg",
+      "folder": ""
+    },
+    {
+      "name": "menu-logo.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/menu-logo.png",
+      "folder": ""
+    },
+    {
+      "name": "particles.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/particles.png",
+      "folder": ""
+    },
+    {
+      "name": "pausebtn-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/pausebtn-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "playbtn-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/playbtn-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "popup-sheet0.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/popup-sheet0.png",
+      "folder": ""
+    },
+    {
+      "name": "popup-sheet1.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/popup-sheet1.png",
+      "folder": ""
+    },
+    {
+      "name": "scoretxt.png",
+      "path": "D:/Djz/Michail/bubbles-game-2/assets/images/scoretxt.png",
+      "folder": ""
+    }
+  ],
+  "folders": [],
+  "packOptions": {
+    "textureName": "bubble-game",
+    "textureFormat": "png",
+    "removeFileExtension": false,
+    "prependFolderName": true,
+    "base64Export": false,
+    "tinify": false,
+    "tinifyKey": "",
+    "scale": 1,
+    "filter": "none",
+    "exporter": "JSON (hash)",
+    "fileName": "pack-result",
+    "savePath": "D:\\Djz\\Michail\\bubbles-game-2\\assets\\textures",
+    "width": 2048,
+    "height": 2048,
+    "fixedSize": false,
+    "powerOfTwo": false,
+    "padding": 0,
+    "extrude": 0,
+    "allowRotation": true,
+    "allowTrim": true,
+    "trimMode": "trim",
+    "alphaThreshold": "0",
+    "detectIdentical": true,
+    "packer": "MaxRectsPacker",
+    "packerMethod": "Smart"
+  }
+}
