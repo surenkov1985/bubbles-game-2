@@ -1,7 +1,9 @@
-import { BuildMixin } from "./screen.build";
-import { App } from "./app";
+
+import BuildMixin from './screen.build';
+import App from "./app";
 
 export default class Screen extends PIXI.Container {
+
 	constructor() {
 		super();
 
@@ -12,7 +14,8 @@ export default class Screen extends PIXI.Container {
 	}
 
 	create() {
-		this.beforeBuild();
+
+		this.beforeBuilt();
 
 		this.buildContainers(this, this.containers, this);
 
@@ -20,16 +23,15 @@ export default class Screen extends PIXI.Container {
 
 		this.buildEvents(this.events, this);
 
-		this.build();
+		this.built();
 	}
 
-	////////////////////////
+	// ///////////////////////////////////////////////////////////////////////////////////////
+	beforeBuilt() {}
 
-	beforeBuild() {}
+	built() {}
 
-	build() {}
-
-	chown() {}
+	shown() {}
 
 	hidden() {}
 
@@ -37,32 +39,37 @@ export default class Screen extends PIXI.Container {
 
 	resize() {}
 
-	////////////////////////
-
+	// ///////////////////////////////////////////////////////////////////////////////////////
 	show() {
+
 		this.active = true;
 		this.visible = true;
 
 		App.update.add(this);
+		// App.resize.add(this);
+		// EE.on('update', this.update, this);
+		EE.on('resize', this.resizeContainers, this);
+
+		this.resizeContainers();
+		this.shown();
 	}
 
 	hide() {
+
 		this.active = false;
 		this.visible = false;
 
 		App.update.remove(this);
-
 		// App.resize.remove(this);
 		// EE.off('update', this.update, this);
-		EE.off("resize", this.resizeContainers, this);
+		EE.off('resize', this.resizeContainers, this);
 
 		this.hidden();
 	}
 
 	resizeContainers() {
-		this.applyContainersTransforms(this.children);
 
-		this.applyStickiness(this.children);
+		this.applyContainersTransforms(this.children);
 
 		this.resize();
 	}

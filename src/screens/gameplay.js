@@ -1,43 +1,61 @@
-import Screen from "../libs/screen";
-import settings from "../settings";
+import Screen from '../libs/screen';
 
 export default class Gameplay extends Screen {
+
 	constructor() {
 		super();
 
-		this.name = "Gameplay";
+		this.name = 'Gameplay';
 
 		this.containers = [
-			{
-				name: "MainContainer",
-
-				children: [
-					{
-						name: "game cont",
-						children: [{ name: "background", type: "sprite", image: "background.jpg", anchor: [0] }],
-					},
-					{
-						name: "menu cont",
-						children: [
-							{
-								name: "menu",
-								type: "sprite",
-								image: "menu.jpg",
-								anchor: [0],
-								width: settings.width,
-								height: settings.height,
-							},
-							{
-								name: "playButton",
-								type: "sprite",
-								image: "menuPlayButton.jpg",
-								scale: 2,
-								position: [settings.width / 2, settings.height / 2 + 40],
-							},
-						],
-					},
-				],
-			},
+			{name: "game cont", children: [
+				// {name: "game bg", type: "sprite", image: "bg-sheet0.png", scaleType: 'coverScreen', scale: 2}
+			]},
+			{name: "menu cont", children: [
+				{name: "menu bg", type: "sprite", image: "menu-bg.jpg", scaleType: 'coverScreen', scale: 2},
+				{name: "menu logo", type: "sprite", image: "menu-logo.png", positionPortrait: [0, -500], positionLandscape: [-400, 0], scale: 2},
+				{name: "playButton", type: "sprite", image: "playbtn-sheet0.png", positionPortrait: [0, 400], positionLandscape: [500, 0], scale: 5},
+				// {name: "aaa", type: "sprite", image: "aaa.png"},
+			]},
 		];
+
+		this.events = {
+
+		};
 	}
+
+	// ////////////////////////////////////////////////////////////////////////////////////////// EVENTS
+	// //////////////////////////////////////////////////////////////////////////////////////////
+	beforeBuilt() {
+
+	}
+
+	built() {
+
+
+	}
+
+	shown() {
+		this.startGameplay();
+	}
+
+	hidden() {
+
+	}
+
+	resize() {
+
+
+	}
+
+	update(dt) {
+
+	}
+
+	// ////////////////////////////////////////////////////////////////////////////////////////// GAME
+	// //////////////////////////////////////////////////////////////////////////////////////////
+	startGameplay() {
+
+	}
+
 }

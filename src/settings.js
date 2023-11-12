@@ -1,4 +1,5 @@
+
 export default {
-	width: 500,
-	height: 900,
+	width: 1920,
+	height: 1080
 };
