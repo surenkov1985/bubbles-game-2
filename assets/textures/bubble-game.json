@@ -1,0 +1,375 @@
+{
+  "frames": {
+    "menu-bg.jpg": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 541,
+        "h": 961
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 541,
+        "h": 961
+      },
+      "sourceSize": {
+        "w": 541,
+        "h": 961
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bg-sheet0.png": {
+      "frame": {
+        "x": 541,
+        "y": 0,
+        "w": 541,
+        "h": 961
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 541,
+        "h": 961
+      },
+      "sourceSize": {
+        "w": 541,
+        "h": 961
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "header-sheet0.png": {
+      "frame": {
+        "x": 0,
+        "y": 961,
+        "w": 541,
+        "h": 121
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 541,
+        "h": 121
+      },
+      "sourceSize": {
+        "w": 541,
+        "h": 121
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "popup-sheet1.png": {
+      "frame": {
+        "x": 1082,
+        "y": 0,
+        "w": 455,
+        "h": 445
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 455,
+        "h": 445
+      },
+      "sourceSize": {
+        "w": 455,
+        "h": 445
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "popup-sheet0.png": {
+      "frame": {
+        "x": 1082,
+        "y": 455,
+        "w": 455,
+        "h": 445
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 455,
+        "h": 445
+      },
+      "sourceSize": {
+        "w": 455,
+        "h": 445
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "scoretxt.png": {
+      "frame": {
+        "x": 0,
+        "y": 1082,
+        "w": 264,
+        "h": 429
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 264,
+        "h": 429
+      },
+      "sourceSize": {
+        "w": 264,
+        "h": 429
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "menu-logo.png": {
+      "frame": {
+        "x": 1082,
+        "y": 910,
+        "w": 422,
+        "h": 212
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 422,
+        "h": 212
+      },
+      "sourceSize": {
+        "w": 422,
+        "h": 212
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "heart-sheet0.png": {
+      "frame": {
+        "x": 1294,
+        "y": 910,
+        "w": 168,
+        "h": 168
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 168,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 168,
+        "h": 168
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bubble-sheet0.png": {
+      "frame": {
+        "x": 1294,
+        "y": 1078,
+        "w": 167,
+        "h": 168
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 168
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 168
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bomb-sheet0.png": {
+      "frame": {
+        "x": 429,
+        "y": 1082,
+        "w": 167,
+        "h": 167
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 167
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 167
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "exitbtn-sheet0.png": {
+      "frame": {
+        "x": 541,
+        "y": 961,
+        "w": 118,
+        "h": 117
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 118,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 118,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "playbtn-sheet0.png": {
+      "frame": {
+        "x": 596,
+        "y": 1079,
+        "w": 117,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 117,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 117,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pausebtn-sheet0.png": {
+      "frame": {
+        "x": 658,
+        "y": 961,
+        "w": 103,
+        "h": 104
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 104
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 104
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "particles.png": {
+      "frame": {
+        "x": 1462,
+        "y": 910,
+        "w": 50,
+        "h": 50
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 50,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 50,
+        "h": 50
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "heart2-sheet0.png": {
+      "frame": {
+        "x": 1462,
+        "y": 960,
+        "w": 40,
+        "h": 40
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 40,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 40,
+        "h": 40
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "bubble-game.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1527,
+      "h": 1346
+    },
+    "scale": 1
+  }
+}
