@@ -1,0 +1,87 @@
+{
+  "frames": {
+    "quiz_character_3.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 909
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 909
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 909
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quiz_character_4.png": {
+      "frame": {
+        "x": 780,
+        "y": 0,
+        "w": 780,
+        "h": 909
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 909
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 909
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quiz_character_5.png": {
+      "frame": {
+        "x": 0,
+        "y": 909,
+        "w": 780,
+        "h": 909
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 780,
+        "h": 909
+      },
+      "sourceSize": {
+        "w": 780,
+        "h": 909
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "quiz-1.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1560,
+      "h": 1689
+    },
+    "scale": 1
+  }
+}
