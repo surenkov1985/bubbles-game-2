@@ -41,7 +41,30 @@ export const App = {
 		this.ticker.add(this.updateHandle, this);
 	},
 
-	updateHandle: function (dt) {},
+	updateHandle: function (dt) {
+		if (this.fpsCounter) this.fpsCounter.begin();
+
+		// EE.emit('update', dt);
+		this.update.emit(dt);
+
+		if (this.fpsCounter) this.fpsCounter.end();
+	},
+
+	resizeHandle: function (e) {
+		this.aspectRatio = window.innerWidth / window.innerHeight;
+		this.isLandscape = this.aspectRatio >= 1;
+		this.isPortrait = !this.isLandscape;
+		const DEFAULT_WIDTH = this.isLandscape ? settings.width : settings.height;
+		const DEFAULT_HEIGHT = this.isLandscape ? settings.height : settings.width;
+		let resizeScale = window.innerWidth / window.innerHeight / (DEFAULT_WIDTH / DEFAULT_HEIGHT);
+		let newWidth = resizeScale > 1 ? DEFAULT_WIDTH * resizeScale : DEFAULT_WIDTH;
+		let newHeight = resizeScale < 1 ? DEFAULT_HEIGHT / resizeScale : DEFAULT_HEIGHT;
+		this.renderer.resize(newWidth, newHeight);
+		this.stage.position.set(newWidth / 2, newHeight / 2);
+		App.isMobile = isMobile();
+		EE.emit("resize", newWidth, newHeight);
+		// this.resize.emit(newWidth, newHeight);
+	},
 
 	addScreen: function (screen) {
 		this.removeScreen(screen);

@@ -51,6 +51,20 @@ export default class Screen extends PIXI.Container {
 		this.visible = false;
 
 		App.update.remove(this);
+
+		// App.resize.remove(this);
+		// EE.off('update', this.update, this);
+		EE.off("resize", this.resizeContainers, this);
+
+		this.hidden();
+	}
+
+	resizeContainers() {
+		this.applyContainersTransforms(this.children);
+
+		this.applyStickiness(this.children);
+
+		this.resize();
 	}
 }
 

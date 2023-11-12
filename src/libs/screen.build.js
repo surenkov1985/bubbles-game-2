@@ -21,7 +21,8 @@ export const BuildMixin = {
 	},
 
 	buildChild(parent, params) {
-		let type = params.type || "container";
+		// определяем тип ресурса
+		let type = params.type || "container"; // если тип не задан то тип - контейнер
 		let result = null;
 
 		if (type === "container") {
@@ -127,6 +128,34 @@ export const BuildMixin = {
 				if (obj.height) obj.height = params.height;
 			}
 		}
+	},
+
+	getGameSize(gameContainer = this["MainContainer"]) {
+		const defWidth = settings.width;
+		const defHeight = settings.height;
+
+		let gameWidth = 0;
+		let gameHeight = 0;
+
+		if (App.isLandscape) {
+			if (window.innerWidth / window.innerHeight < defWidth / defHeight) {
+				gameWidth = defWidth;
+				gameHeight = (defHeight * (defWidth / defHeight)) / (window.innerWidth / window.innerHeight);
+			} else {
+				gameWidth = (defWidth * (window.innerWidth / window.innerHeight)) / (defWidth / defHeight);
+				gameHeight = defHeight;
+			}
+		} else {
+			if (window.innerWidth / window.innerHeight < defHeight / defWidth) {
+				gameWidth = defHeight;
+				gameHeight = (defWidth * (defHeight / defWidth)) / (window.innerWidth / window.innerHeight);
+			} else {
+				gameWidth = (defHeight * (window.innerWidth / window.innerHeight)) / (defHeight / defWidth);
+				gameHeight = defWidth;
+			}
+		}
+
+		return [gameWidth, gameHeight];
 	},
 
 	getTexture(key) {
