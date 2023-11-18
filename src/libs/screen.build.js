@@ -85,9 +85,10 @@ export default {
 		obj.on('pointermove', (e) => {
 			EE.emit(screen.name + ' ' + event + ' Move', obj, e);
 		});
-		// obj.on('pointerover', (event) => {
-		// 	console.log(666)
-		// });
+		obj.on('pointerover', (e) => {
+			EE.emit(screen.name + ' ' + event + ' Over', obj, e);
+			console.log(666)
+		});
 		// obj.on('pointerout', (event) => {
 		// 	console.log(666)
 		// });
