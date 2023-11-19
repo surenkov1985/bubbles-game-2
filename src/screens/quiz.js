@@ -33,15 +33,15 @@ export class Quiz extends Screen {
 					{name: "hero card", type: "sprite", image: "quiz_character_4.png", positionPortrait: [0,-400], positionLandscape: [ -500, 0], scale: 0.8},
 					{name: "quest", type: "text", text: "Вопрос 4", styles: {fontSize: 80, fontFamily: "Arial", fontWeight: 700, fill:0x000000, stroke: 0xffffff, strokeThickness: 15, align: "center"}, positionPortrait: [0, -200], positionLandscape: [400, -300]},
 					{name: "responses", positionLandscape: [400, -100], positionPortrait: [0, 100],children: [
-						{name: "resp1 button", position:[0, 0], children: [
+						{name: "resp1 button", position:[0, 0], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 1", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]},
-						{name: "resp2 button", position:[0, 150], children: [
+						{name: "resp2 button", position:[0, 150], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 2", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]},
-						{name: "resp3 button", position:[0, 300], children: [
+						{name: "resp3 button", position:[0, 300], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 3", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]}
@@ -51,15 +51,15 @@ export class Quiz extends Screen {
 					{name: "hero card", type: "sprite", image: "quiz_character_3.png", positionPortrait: [0,-400], positionLandscape: [ -500, 0], scale: 0.8},
 					{name: "quest", type: "text", text: "Вопрос 3", styles: {fontSize: 80, fontFamily: "Arial", fontWeight: 700, fill:0x000000, stroke: 0xffffff, strokeThickness: 15, align: "center"}, positionPortrait: [0, -200], positionLandscape: [400, -300]},
 					{name: "responses", positionLandscape: [400, -100], positionPortrait: [0, 100],children: [
-						{name: "resp1 button", position:[0, 0], children: [
+						{name: "resp1 button", position:[0, 0], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 1", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]},
-						{name: "resp2 button", position:[0, 150], children: [
+						{name: "resp2 button", position:[0, 150], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 2", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]},
-						{name: "resp3 button", position:[0, 300], children: [
+						{name: "resp3 button", position:[0, 300], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 3", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]}
@@ -69,15 +69,15 @@ export class Quiz extends Screen {
 					{name: "hero card", type: "sprite", image: "quiz_character_2.png", positionPortrait: [0,-400], positionLandscape: [ -500, 0], scale: 0.8},
 					{name: "quest", type: "text", text: "Вопрос 2", styles: {fontSize: 80, fontFamily: "Arial", fontWeight: 700, fill:0x000000, stroke: 0xffffff, strokeThickness: 15, align: "center"}, positionPortrait: [0, -200], positionLandscape: [400, -300]},
 					{name: "responses", positionLandscape: [400, -100], positionPortrait: [0, 100],children: [
-						{name: "resp1 button", position:[0, 0], children: [
+						{name: "resp1 button", position:[0, 0], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 1", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]},
-						{name: "resp2 button", position:[0, 150], children: [
+						{name: "resp2 button", position:[0, 150], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 2", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]},
-						{name: "resp3 button", position:[0, 300], children: [
+						{name: "resp3 button", position:[0, 300], button: "btn", children: [
 							{name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8},
 							{name: "resp_text", type: "text", text: "Ответ 3", styles: {fill: 0xffffff, fontSize: 56, fontWeight: 500}}
 						]}
@@ -112,8 +112,9 @@ export class Quiz extends Screen {
 			},
 
 			"Quiz btn Down": function(container, e) {
-				this.pulseButton(container)
+				this.pulseButton(container);
 
+				// this.toggleQuestion(container);
 			}
 		}
 	}
@@ -148,8 +149,20 @@ export class Quiz extends Screen {
 	pulseButton(container){
 
 		if (!container) return;
-
+		console.log(container);
 		GSAP.timeline().to(container, {scaleX: 0.95, scaleY: 0.9, duration: 0.1})
-			.to(container, {scaleX: 1, scaleY: 1, duration: 0.3, ease: "elastic.out"})
+			.to(container, {scaleX: 1, scaleY: 1, duration: 0.3, ease: "elastic.out"}).then(()=>{this.toggleQuestion(container)})
+	}
+
+	toggleQuestion (container) {
+
+		const questionsContainer = this["questions cont"];
+		const questionContainer = container.parent.parent;
+
+		const questionIndex = questionsContainer.children.indexOf(questionContainer);
+
+		questionContainer.visible = false;
+		questionsContainer.children[questionIndex - 1].visible = true;
+		// console.log()
 	}
 }
