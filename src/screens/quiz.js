@@ -163,6 +163,6 @@ export class Quiz extends Screen {
 
 		questionContainer.visible = false;
 		questionsContainer.children[questionIndex - 1].visible = true;
-		// console.log()
+		questionsContainer.children[questionIndex - 1].params.visible = true;
 	}
 }
