@@ -1,0 +1,183 @@
+{
+  "frames": {
+    "quiz-cta-bg.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1920
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 1920
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 1920
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "star.png": {
+      "frame": {
+        "x": 1080,
+        "y": 0,
+        "w": 1038,
+        "h": 606
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1038,
+        "h": 606
+      },
+      "sourceSize": {
+        "w": 1038,
+        "h": 606
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "button-red.png": {
+      "frame": {
+        "x": 1686,
+        "y": 0,
+        "w": 986,
+        "h": 186
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 986,
+        "h": 186
+      },
+      "sourceSize": {
+        "w": 986,
+        "h": 186
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quiz-cta-char-2.png": {
+      "frame": {
+        "x": 1080,
+        "y": 1038,
+        "w": 472,
+        "h": 603
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 472,
+        "h": 603
+      },
+      "sourceSize": {
+        "w": 472,
+        "h": 603
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "button-black.png": {
+      "frame": {
+        "x": 1686,
+        "y": 986,
+        "w": 558,
+        "h": 105
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 558,
+        "h": 105
+      },
+      "sourceSize": {
+        "w": 558,
+        "h": 105
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quiz-cta-char-4.png": {
+      "frame": {
+        "x": 1080,
+        "y": 1544,
+        "w": 343,
+        "h": 438
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 343,
+        "h": 438
+      },
+      "sourceSize": {
+        "w": 343,
+        "h": 438
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "quiz-cta-char-3.png": {
+      "frame": {
+        "x": 1518,
+        "y": 1544,
+        "w": 311,
+        "h": 362
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 311,
+        "h": 362
+      },
+      "sourceSize": {
+        "w": 311,
+        "h": 362
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "quiz-cta-0.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1872,
+      "h": 1920
+    },
+    "scale": 1
+  }
+}

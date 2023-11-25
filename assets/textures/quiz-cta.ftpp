@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "version": "0.6.7"
+  },
+  "savePath": "C:\\Users\\Mikhail\\Documents\\git\\bubbles-game-2\\assets\\textures",
+  "images": [
+    {
+      "name": "button-black.png",
+      "path": "C:/Users/Mikhail/Downloads/button-black.png",
+      "folder": ""
+    },
+    {
+      "name": "button-red.png",
+      "path": "C:/Users/Mikhail/Downloads/button-red.png",
+      "folder": ""
+    },
+    {
+      "name": "quiz-cta-bg.png",
+      "path": "C:/Users/Mikhail/Downloads/quiz-cta-bg.png",
+      "folder": ""
+    },
+    {
+      "name": "quiz-cta-char-1.png",
+      "path": "C:/Users/Mikhail/Downloads/quiz-cta-char-1.png",
+      "folder": ""
+    },
+    {
+      "name": "quiz-cta-char-2.png",
+      "path": "C:/Users/Mikhail/Downloads/quiz-cta-char-2.png",
+      "folder": ""
+    },
+    {
+      "name": "quiz-cta-char-3.png",
+      "path": "C:/Users/Mikhail/Downloads/quiz-cta-char-3.png",
+      "folder": ""
+    },
+    {
+      "name": "quiz-cta-char-4.png",
+      "path": "C:/Users/Mikhail/Downloads/quiz-cta-char-4.png",
+      "folder": ""
+    },
+    {
+      "name": "star.png",
+      "path": "C:/Users/Mikhail/Downloads/star.png",
+      "folder": ""
+    }
+  ],
+  "folders": [],
+  "packOptions": {
+    "textureName": "quiz-cta",
+    "textureFormat": "png",
+    "removeFileExtension": false,
+    "prependFolderName": true,
+    "base64Export": false,
+    "tinify": false,
+    "tinifyKey": "",
+    "scale": 1,
+    "filter": "none",
+    "exporter": "JSON (hash)",
+    "fileName": "pack-result",
+    "savePath": "C:\\Users\\Mikhail\\Documents\\git\\bubbles-game-2\\assets\\textures",
+    "width": 2048,
+    "height": 2048,
+    "fixedSize": false,
+    "powerOfTwo": false,
+    "padding": 0,
+    "extrude": 0,
+    "allowRotation": true,
+    "allowTrim": true,
+    "trimMode": "trim",
+    "alphaThreshold": "0",
+    "detectIdentical": true,
+    "packer": "MaxRectsPacker",
+    "packerMethod": "Smart"
+  }
+}
