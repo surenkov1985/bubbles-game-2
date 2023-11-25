@@ -8,5 +8,8 @@ module.exports = {
 	"bubble-game.json": { type: "atlas", url: "assets/textures/bubble-game.json" },
 
 	"quiz-atlas1.json": { type: "atlas", url: "assets/textures/quiz-0.json" },
-	"quiz-atlas2.json": { type: "atlas", url: "assets/textures/quiz-1.json" }
+	"quiz-atlas2.json": { type: "atlas", url: "assets/textures/quiz-1.json" },
+
+	"quiz-cta-atlas1.json": { type: "atlas", url: "assets/textures/quiz-cta-0.json" },
+	"quiz-cta-atlas2.json": { type: "atlas", url: "assets/textures/quiz-cta-1.json" },
 };
