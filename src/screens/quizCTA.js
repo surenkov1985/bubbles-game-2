@@ -18,7 +18,7 @@ export class QuizCTA extends Screen {
 			{ name: "cta_text cont", positionPortrait: [0, -600], positionLandscape: [-450, -300], children: [
 				{ name: "cta_text_bg", type: "sprite", image: "button-black.png", children: [
 					{ name: "quiz_name_text", type: "text", text: "Result", styles: { fill: 0xffffff, fontSize: 50, fontWeight: 600 } },
-				] }
+				]}
 			]},
 
 			// звезда
@@ -26,12 +26,10 @@ export class QuizCTA extends Screen {
 
 			// кнопка результата
 			{ name: "quiz_start cont", positionPortrait: [0, 500], positionLandscape: [400, 0], children: [
-					{ name: "quiz_start_bg button", button: "result", type: "sprite", image: "quiz_button.png", children: [
-						{ name: "quiz_name_text", type: "text", text: "Watch more", styles: { fill: 0xffffff, fontSize: 60, fontWeight: 600 } },
-					],
-					},
-				],
-			},
+				{ name: "quiz_start_bg button", button: "result", type: "sprite", image: "quiz_button.png", children: [
+					{ name: "quiz_name_text", type: "text", text: "Watch more", styles: { fill: 0xffffff, fontSize: 60, fontWeight: 600 } },
+				]},
+			]},
 		]}
 	];
 

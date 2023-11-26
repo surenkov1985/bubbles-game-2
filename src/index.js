@@ -17,12 +17,13 @@ App.addTicker();
 
 Loader.load(assets, () => {
 
-	App.QuizGameplay = App.addScreen(new QuizGameplay());
+	// App.QuizGameplay = App.addScreen(new QuizGameplay());
 	App.QuizIntro = App.addScreen(new QuizIntro());
 	App.Quiz = App.addScreen(new Quiz());
 	App.QuizCTA = App.addScreen(new QuizCTA());
 
-	App.QuizGameplay.show();
+	// App.QuizGameplay.show();
+	App.QuizIntro.show();
 
 	// App.Gameplay = App.addScreen(new Gameplay());
 	//
