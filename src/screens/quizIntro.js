@@ -17,7 +17,7 @@ export class QuizIntro extends Screen {
 				]},
 
 				// Название опроса
-				{ name: "quiz_name cont", positionPortrait: [0, -600], positionLandscape: [-400, -300], children: [
+				{ name: "quiz_name cont", positionPortrait: [0, -600], alpha: 0, positionLandscape: [-400, -300], children: [
 					{ name: "quiz_name_bg", type: "sprite", image: "button-black.png", children: [
 						{ name: "quiz_name_text", type: "text", text: "Minecraft", styles: { fill: 0xffffff, fontSize: 50, fontWeight: 600 } },
 					]},
@@ -41,7 +41,7 @@ export class QuizIntro extends Screen {
 				{ name: "quiz_text", type: "text", text: "Насколько хорошо ты знаешь Minecraft", positionPortrait: [0, -50], positionLandscape: [400, -100], styles: { fill: 0x000000, fontSize: 72, fontWeight: 700, _wordWrap: true, wordWrapWidth: 800, align: "center" } },
 
 				// кнопка старт
-				{ name: "quiz_start cont", positionPortrait: [0, 200], positionLandscape: [400, 200], children: [
+				{ name: "quiz_start cont", elasted: 0, initScale : 1,rubberScale : 0, positionPortrait: [0, 200], positionLandscape: [400, 200], children: [
 					{ name: "quiz_start_bg button", button: "start", type: "sprite", image: "quiz_button.png", children: [
 						{ name: "quiz_name_text", type: "text", text: "Пройти опрос", styles: { fill: 0xffffff, fontSize: 60, fontWeight: 600 } },
 					]},
@@ -79,6 +79,12 @@ export class QuizIntro extends Screen {
 		// 		.to(quest, { y: defPosY - 10, alpha: 1, duration: 0.2, ease: "power1.out" }, delay)
 		// 		.to(quest, { y: defPosY, duration: 0.2, ease: "power1.out" });
 		// });
+		console.log(this["quiz_character1 cont"].children[0]);
+		GSAP.timeline()
+			.to(this["bg cont"], {scaleX: 1.1, scaleY: 1.1, duration: 0.3})
+			.to(this["bg cont"], {scaleX: 1, scaleY: 1, duration: 0.3})
+			.to(this["quiz_name cont"], {alpha: 1,scaleX: 1.1, scaleY: 1.1, duration: 0.3})
+			.to(this["quiz_name cont"], {scaleX: 1, scaleY: 1, duration: 0.3})
 	}
 
 	/////////////////////////////////////////////////
@@ -106,5 +112,20 @@ export class QuizIntro extends Screen {
 		// menuContainer.params.visible = false;
 		// questionsContainer.children[1].visible = true;
 		// questionsContainer.children[1].params.visible = true;
+	}
+
+	update(dt) {
+		// console.log(dt)
+		this["quiz_start cont"].params.elasted += dt;
+		this["quiz_start cont"].params.rubberScale = Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 20.0) / 50;
+
+		this["quiz_start cont"].scaleX = this["quiz_start cont"].params.initScale + this["quiz_start cont"].params.rubberScale;
+		this["quiz_start cont"].scaleY = this["quiz_start cont"].params.initScale + this["quiz_start cont"].params.rubberScale;
+
+		// console.log(Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 80.0) * 20)
+
+		this["quiz_character1 cont"].children[0].x = this["quiz_character1 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 40.0) * 3
+		this["quiz_character1 cont"].children[0].y = this["quiz_character1 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 50.0) * 4
+
 	}
 }
