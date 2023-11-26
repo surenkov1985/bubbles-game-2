@@ -87,6 +87,16 @@ export class QuizIntro extends Screen {
 			.to(this["quiz_character2 cont"].children[0], {x: this["quiz_character2 cont"].children[0].params.position[0], alpha: 1, duration: 0.4 })
 			.to(this["quiz_character3 cont"].children[0], {x: this["quiz_character3 cont"].children[0].params.position[0], alpha: 1, duration: 0.4 })
 			.to(this["quiz_character4 cont"].children[0], {x: this["quiz_character4 cont"].children[0].params.position[0], alpha: 1, duration: 0.4 })
+			.then(() => {
+				this["quiz_name cont"].params.alpha = 1;
+				this["quiz_text"].params.alpha = 1;
+				this["quiz_start cont"].params.alpha = 1;
+				this["quiz_character1 cont"].children[0].params.alpha = 1;
+				this["quiz_character2 cont"].children[0].params.alpha = 1;
+				this["quiz_character3 cont"].children[0].params.alpha = 1;
+				this["quiz_character4 cont"].children[0].params.alpha = 1;
+
+			})
 
 
 	}
@@ -112,7 +122,7 @@ export class QuizIntro extends Screen {
 	}
 
 	update(dt) {
-		
+
 		this["quiz_start cont"].params.elasted += dt;
 		this["quiz_start cont"].params.rubberScale = Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 30.0) / 60;
 
