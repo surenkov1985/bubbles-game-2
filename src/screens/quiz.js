@@ -13,36 +13,36 @@ export class Quiz extends Screen {
 				{quest: "На сколько блоков дается эффект от маяка?",
 					responses: [
 						{text: "25 блоков", ok: true},
-						{text: "100 блоков", ok: false},
-						{text: "15 блоков", ok: false}
+						{text: "100 блоков"},
+						{text: "15 блоков"}
 					]
 				},
 				{quest: "Кто создатель майна?",
 					responses: [
 						{text: "Стив Джопс", ok: true},
-						{text: "Я!", ok: false},
-						{text: "Незнаю)", ok: false}
+						{text: "Я!"},
+						{text: "Незнаю)"}
 					]
 				},
 				{quest: "Какой блок в Майнкрафте нельзя скрафтить?",
 					responses: [
-						{text: "Блок песчаника", ok: false},
+						{text: "Блок песчаника"},
 						{text: "Пустой блок", ok: true},
-						{text: "Алмазный блок", ok: false}
+						{text: "Алмазный блок"}
 					]
 				},
 				{quest: "У какого босса больше всего жизни?",
 					responses: [
-						{text: "Дракон", ok: false},
+						{text: "Дракон"},
 						{text: "Иссушитель", ok: true},
-						{text: "ГАСТ", ok: false}
+						{text: "ГАСТ"}
 					]
 				},
 				{quest: "Как получить розу иссушения?",
 					responses: [
 						{text: "При помощи визора", ok: true},
-						{text: "При помощи дракона", ok: false},
-						{text: "Ее нужно скрафтить", ok: false}
+						{text: "При помощи дракона"},
+						{text: "Ее нужно скрафтить"}
 					]
 				}
 			]
@@ -129,7 +129,7 @@ export class Quiz extends Screen {
 		const responses = container.parent;
 		const responseIndex = responses.children.indexOf(container);
 
-		if (container.params.ok) {this.score += 10}
+		if (container.params.ok) this.score += 10
 
 		responses.children.forEach((resp, index) => {
 
