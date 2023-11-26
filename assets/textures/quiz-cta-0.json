@@ -2,8 +2,8 @@
   "frames": {
     "quiz-cta-bg.png": {
       "frame": {
-        "x": 0,
-        "y": 0,
+        "x": 1,
+        "y": 1,
         "w": 1080,
         "h": 1920
       },
@@ -26,8 +26,8 @@
     },
     "star.png": {
       "frame": {
-        "x": 1080,
-        "y": 0,
+        "x": 1083,
+        "y": 1,
         "w": 1038,
         "h": 606
       },
@@ -50,8 +50,8 @@
     },
     "button-red.png": {
       "frame": {
-        "x": 1686,
-        "y": 0,
+        "x": 1691,
+        "y": 1,
         "w": 986,
         "h": 186
       },
@@ -72,24 +72,48 @@
         "y": 0.5
       }
     },
-    "quiz-cta-char-2.png": {
+    "green-button.png": {
       "frame": {
-        "x": 1080,
-        "y": 1038,
-        "w": 472,
-        "h": 603
+        "x": 1691,
+        "y": 989,
+        "w": 825,
+        "h": 156
       },
       "rotated": true,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 472,
-        "h": 603
+        "w": 825,
+        "h": 156
       },
       "sourceSize": {
-        "w": 472,
-        "h": 603
+        "w": 825,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "yellow-button.png": {
+      "frame": {
+        "x": 1083,
+        "y": 1041,
+        "w": 825,
+        "h": 156
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 825,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 825,
+        "h": 156
       },
       "pivot": {
         "x": 0.5,
@@ -98,12 +122,12 @@
     },
     "button-black.png": {
       "frame": {
-        "x": 1686,
-        "y": 986,
+        "x": 1241,
+        "y": 1816,
         "w": 558,
         "h": 105
       },
-      "rotated": true,
+      "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
@@ -122,8 +146,8 @@
     },
     "quiz-cta-char-4.png": {
       "frame": {
-        "x": 1080,
-        "y": 1544,
+        "x": 1241,
+        "y": 1041,
         "w": 343,
         "h": 438
       },
@@ -144,24 +168,24 @@
         "y": 0.5
       }
     },
-    "quiz-cta-char-3.png": {
+    "quiz-cta-char-1.png": {
       "frame": {
-        "x": 1518,
-        "y": 1544,
-        "w": 311,
-        "h": 362
+        "x": 1241,
+        "y": 1386,
+        "w": 331,
+        "h": 388
       },
       "rotated": false,
       "trimmed": false,
       "spriteSourceSize": {
         "x": 0,
         "y": 0,
-        "w": 311,
-        "h": 362
+        "w": 331,
+        "h": 388
       },
       "sourceSize": {
-        "w": 311,
-        "h": 362
+        "w": 331,
+        "h": 388
       },
       "pivot": {
         "x": 0.5,
@@ -175,8 +199,8 @@
     "image": "quiz-cta-0.png",
     "format": "RGBA8888",
     "size": {
-      "w": 1872,
-      "h": 1920
+      "w": 1878,
+      "h": 1922
     },
     "scale": 1
   }

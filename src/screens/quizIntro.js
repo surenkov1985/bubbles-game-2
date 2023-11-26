@@ -19,7 +19,7 @@ export class QuizIntro extends Screen {
 				// Название опроса
 				{ name: "quiz_name cont", positionPortrait: [0, -600], positionLandscape: [-400, -300], children: [
 					{ name: "quiz_name_bg", type: "sprite", image: "button-black.png", children: [
-						{ name: "quiz_name_text", type: "text", text: "Опрос", styles: { fill: 0xffffff, fontSize: 50, fontWeight: 600 } },
+						{ name: "quiz_name_text", type: "text", text: "Minecraft", styles: { fill: 0xffffff, fontSize: 50, fontWeight: 600 } },
 					]},
 				]},
 
@@ -38,7 +38,7 @@ export class QuizIntro extends Screen {
 				]},
 
 				// Текст опроса
-				{ name: "quiz_text", type: "text", text: "Lorem Ipsum", positionPortrait: [0, 0], positionLandscape: [400, -50], styles: { fill: 0x000000, fontSize: 72, fontWeight: 700 } },
+				{ name: "quiz_text", type: "text", text: "Насколько хорошо ты знаешь Minecraft", positionPortrait: [0, -50], positionLandscape: [400, -100], styles: { fill: 0x000000, fontSize: 72, fontWeight: 700, _wordWrap: true, wordWrapWidth: 800, align: "center" } },
 
 				// кнопка старт
 				{ name: "quiz_start cont", positionPortrait: [0, 200], positionLandscape: [400, 200], children: [

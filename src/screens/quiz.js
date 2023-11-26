@@ -6,6 +6,48 @@ export class Quiz extends Screen {
 
 		this.name = "Quiz";
 
+		this.score = 0;
+
+		this.quiz = {
+			questions: [
+				{quest: "На сколько блоков дается эффект от маяка?",
+					responses: [
+						{text: "25 блоков", ok: true},
+						{text: "100 блоков", ok: false},
+						{text: "15 блоков", ok: false}
+					]
+				},
+				{quest: "Кто создатель майна?",
+					responses: [
+						{text: "Стив Джопс", ok: true},
+						{text: "Я!", ok: false},
+						{text: "Незнаю)", ok: false}
+					]
+				},
+				{quest: "Какой блок в Майнкрафте нельзя скрафтить?",
+					responses: [
+						{text: "Блок песчаника", ok: false},
+						{text: "Пустой блок", ok: true},
+						{text: "Алмазный блок", ok: false}
+					]
+				},
+				{quest: "У какого босса больше всего жизни?",
+					responses: [
+						{text: "Дракон", ok: false},
+						{text: "Иссушитель", ok: true},
+						{text: "ГАСТ", ok: false}
+					]
+				},
+				{quest: "Как получить розу иссушения?",
+					responses: [
+						{text: "При помощи визора", ok: true},
+						{text: "При помощи дракона", ok: false},
+						{text: "Ее нужно скрафтить", ok: false}
+					]
+				}
+			]
+		};
+
 		this.containers = [
 
 			// контейнер вопросов
@@ -15,12 +57,11 @@ export class Quiz extends Screen {
 				{ name: "bg cont", children: [{ name: "bg", type: "sprite", image: "quiz_bg.png", scaleType: "coverScreen" }] },
 
 				// вопросы
-				{ name: "questions cont", children: [
+				{ name: "questions cont", children: [...this.quiz.questions.map((item, index) => {
 
-					// вопрос 5
-					{ name: "question5 cont", visible: false, children: [
-						{ name: "hero card", type: "sprite", image: "quiz_character_5.png", positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8, },
-						{ name: "quest", type: "text", text: "Вопрос 5", positionPortrait: [0, -200], positionLandscape: [400, -300],styles: {
+					return { name: `question${index + 1} cont`, visible: index === this.quiz.questions.length - 1, children: [
+						{ name: "hero card", type: "sprite", image: `quiz_character_${index + 1}.png`, positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8, },
+						{ name: "quest", type: "text", text: item.quest, positionPortrait: [0, -200], positionLandscape: [400, -300],styles: {
 							fontSize: 80,
 							fontFamily: "Arial",
 							fontWeight: 700,
@@ -28,145 +69,23 @@ export class Quiz extends Screen {
 							stroke: 0xffffff,
 							strokeThickness: 15,
 							align: "center",
+							wordWrap: true,
+							wordWrapWidth: 900
 						}},
 
 						// кнопки ответов
-						{ name: "responses",positionLandscape: [400, -100], positionPortrait: [0, 100], children: [
-							{ name: "resp1 button", position: [0, 0], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 1", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp2 button", position: [0, 150], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 2", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp3 button", position: [0, 300], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 3", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-						]},
-					]},
-
-					// вопрос 4
-					{ name: "question4 cont", visible: false, children: [
-						{ name: "hero card", type: "sprite", image: "quiz_character_4.png", positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8 },
-						{ name: "quest", type: "text", text: "Вопрос 4", positionPortrait: [0, -200], positionLandscape: [400, -300],styles: {
-							fontSize: 80,
-							fontFamily: "Arial",
-							fontWeight: 700,
-							fill: 0x000000,
-							stroke: 0xffffff,
-							strokeThickness: 15,
-							align: "center"
-						}},
-
-						// кнопки ответов
-						{ name: "responses", positionLandscape: [400, -100], positionPortrait: [0, 100], children: [
-							{ name: "resp1 button", position: [0, 0], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 1", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp2 button", position: [0, 150], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 2", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{name: "resp3 button", position: [0, 300], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 3", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-						]},
-					]},
-
-					// вопрос 3
-					{ name: "question3 cont", visible: false, children: [
-						{ name: "hero card", type: "sprite", image: "quiz_character_3.png", positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8 },
-						{ name: "quest", type: "text", text: "Вопрос 3", positionPortrait: [0, -200], positionLandscape: [400, -300], styles: {
-							fontSize: 80,
-							fontFamily: "Arial",
-							fontWeight: 700,
-							fill: 0x000000,
-							stroke: 0xffffff,
-							strokeThickness: 15,
-							align: "center",
-						}},
-
-						// кнопки ответов
-						{ name: "responses", positionLandscape: [400, -100], positionPortrait: [0, 100], children: [
-							{ name: "resp1 button", position: [0, 0], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 1", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp2 button", position: [0, 150], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 2", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp3 button", position: [0, 300], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 3", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-						]},
-					]},
-
-					// вопрос 2
-					{ name: "question2 cont", visible: false, children: [
-						{ name: "hero card", type: "sprite", image: "quiz_character_2.png", positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8 },
-						{ name: "quest", type: "text", text: "Вопрос 2", positionPortrait: [0, -200], positionLandscape: [400, -300], styles: {
-							fontSize: 80,
-							fontFamily: "Arial",
-							fontWeight: 700,
-							fill: 0x000000,
-							stroke: 0xffffff,
-							strokeThickness: 15,
-							align: "center",
-						}},
-
-						// кнопки ответов
-						{ name: "responses", positionLandscape: [400, -100], positionPortrait: [0, 100], children: [
-							{ name: "resp1 button", position: [0, 0], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 1", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp2 button", position: [0, 150], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 2", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp3 button", position: [0, 300], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 3", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-						]},
-					]},
-
-					// вопрос 2
-					{ name: "question1 cont", children: [
-						{ name: "hero card", type: "sprite", image: "quiz_character_1.png", positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8 },
-						{ name: "quest", type: "text", text: "Вопрос 1", positionPortrait: [0, -200], positionLandscape: [400, -300], styles: {
-							fontSize: 80,
-							fontFamily: "Arial",
-							fontWeight: 700,
-							fill: 0x000000,
-							stroke: 0xffffff,
-							strokeThickness: 15,
-							align: "center",
-						}},
-
-						// кнопки ответов
-						{name: "responses", positionLandscape: [400, -100], positionPortrait: [0, 100], children: [
-							{ name: "resp1 button", cursor: "pointer", position: [0, 0], button: "btn", defaultCursor: "pointer", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 1", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp2 button", position: [0, 150], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 2", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-							{ name: "resp3 button", position: [0, 300], button: "btn", children: [
-								{ name: "resp_btn", type: "sprite", image: "quiz_button.png", scale: 0.8 },
-								{ name: "resp_text", type: "text", text: "Ответ 3", styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
-							]},
-						]},
-					]},
-				]},
+						{ name: "responses",positionLandscape: [400, 0], positionPortrait: [0, 100], children:
+							[...item.responses.map((resp, ind) => {
+								return { name: `resp${ind + 1} button`, position: [0, 150 * ind], ok: resp.ok, button: "btn", children: [
+									{ name: "resp_ok", type: "sprite", image: resp.ok ? "green-button.png" : "quiz_button.png", scale: 0.8 },
+									{ name: "resp_btn", type: "sprite", image: "yellow-button.png", scale: 0.8 },
+									{ name: "resp_text", type: "text", text: resp.text, styles: { fill: 0xffffff, fontSize: 56, fontWeight: 500 } },
+								]}
+							})]
+						},
+					]}
+				})]
+				},
 			]},
 		];
 
@@ -188,7 +107,7 @@ export class Quiz extends Screen {
 
 	shown() {
 		const questions = this["question1 cont"].children[2].children;
-		// console.log(this["quiz_character1 cont"]);
+
 		let delay = 0.0;
 		questions.forEach((quest) => {
 			let defPosY = quest.params.position[1];
@@ -206,12 +125,30 @@ export class Quiz extends Screen {
 	pulseButton(container) {
 		if (!container) return;
 
-		GSAP.timeline()
-			.to(container, { scaleX: 0.95, scaleY: 0.9, duration: 0.1 })
-			.to(container, { scaleX: 1, scaleY: 1, duration: 0.3, ease: "elastic.out" })
-			.then(() => {
-				this.toggleQuestion(container);
-			});
+		const questionContainer = container.parent.parent;
+		const responses = container.parent;
+		const responseIndex = responses.children.indexOf(container);
+
+		if (container.params.ok) {this.score += 10}
+
+		responses.children.forEach((resp, index) => {
+
+			resp.children[1].params.visible = false;
+			resp.children[1].visible = false;
+
+			if (index === responseIndex) {
+				GSAP.timeline()
+					.to(resp, { scaleX: 1.1, scaleY: 1.1, duration: 0.1 })
+					.to(resp, { scaleX: 0, scaleY: 0, duration: 0.3, ease: "elastic.out" }, 0.7)
+					.then(() => {
+						this.toggleQuestion(container);
+					});
+			} else {
+				GSAP.timeline()
+					.to(resp, { scaleX: 0, scaleY: 0, duration: 0.3 }, 0.5)
+			}
+		});
+
 	}
 
 	toggleQuestion(container) {
@@ -219,7 +156,7 @@ export class Quiz extends Screen {
 		const questionsContainer = this["questions cont"];
 		const questionContainer = container.parent.parent;
 		const questionIndex = questionsContainer.children.indexOf(questionContainer);
-		console.log(questionIndex);
+
 		if (questionIndex > 0) {
 
 			questionContainer.visible = false;
@@ -230,7 +167,8 @@ export class Quiz extends Screen {
 
 			questionContainer.visible = false;
 			questionContainer.params.visible = false;
-
+			App.QuizCTA.score = this.score;
+			console.log(App.score)
 			App.Quiz.hide();
 			App.QuizCTA.show();
 		}

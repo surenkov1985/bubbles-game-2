@@ -116,7 +116,7 @@ export default {
 
 	applyTransforms(obj, params = {}) {
 
-		let isHasScaleType = false
+		let isHasScaleType = false;
 
 		for (let key in params) {
 

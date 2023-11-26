@@ -6,6 +6,8 @@ export class QuizCTA extends Screen {
 
 		this.name = "QuizCTA";
 
+		this.score = 0;
+
 		this.containers = [
 
 		// контейнер cta
@@ -22,7 +24,9 @@ export class QuizCTA extends Screen {
 			]},
 
 			// звезда
-			{ name: "star", type: "sprite", image: "star.png", positionPortrait: [0, -100], positionLandscape: [-500, 100], scaleLandscape: 0.8 },
+			{ name: "star_cont cont",  positionPortrait: [0, -100], positionLandscape: [-500, 100], children: [
+				{ name: "star", type: "sprite", image: "star.png", scaleLandscape: 0.8 }
+			]},
 
 			// кнопка результата
 			{ name: "quiz_start cont", positionPortrait: [0, 500], positionLandscape: [400, 0], children: [
@@ -45,11 +49,32 @@ export class QuizCTA extends Screen {
 	};
 	}
 
-	beforeBuilt() {}
+	beforeBuilt() {
 
-	built() {}
+		// this.score = App.score;
+		//
+	}
 
-	shown() {}
+	built() {
+
+
+
+		// this["star_text"].params.text = 50;
+		// const score = new PIXI.Text(`Вы набрали ${App.Quiz.score} баллов!`, { fill: 0xffffff, fontSize: 56, fontWeight: 500, align: "center", wordWrap: true, wordWrapWidth: 300 });
+		// score.anchor.set(0.5);
+		// score.x = 50;
+		// score.y = -10;
+		// this["star_cont cont"].addChild(score);
+	}
+
+	shown() {
+
+		const score = new PIXI.Text(`Вы набрали ${App.Quiz.score} баллов!`, { fill: 0xffffff, fontSize: 56, fontWeight: 500, align: "center", wordWrap: true, wordWrapWidth: 300 });
+		score.anchor.set(0.5);
+		score.x = 50;
+		score.y = -10;
+		this["star_cont cont"].addChild(score);
+	}
 
 
 

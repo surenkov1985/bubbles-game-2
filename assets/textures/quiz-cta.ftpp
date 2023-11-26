@@ -15,6 +15,11 @@
       "folder": ""
     },
     {
+      "name": "green-button.png",
+      "path": "C:/Users/Mikhail/Documents/git/bubbles-game-2/assets/images/green-button.png",
+      "folder": ""
+    },
+    {
       "name": "quiz-cta-bg.png",
       "path": "C:/Users/Mikhail/Downloads/quiz-cta-bg.png",
       "folder": ""
@@ -43,6 +48,11 @@
       "name": "star.png",
       "path": "C:/Users/Mikhail/Downloads/star.png",
       "folder": ""
+    },
+    {
+      "name": "yellow-button.png",
+      "path": "C:/Users/Mikhail/Documents/git/bubbles-game-2/assets/images/yellow-button.png",
+      "folder": ""
     }
   ],
   "folders": [],
@@ -63,7 +73,7 @@
     "height": 2048,
     "fixedSize": false,
     "powerOfTwo": false,
-    "padding": 0,
+    "padding": 1,
     "extrude": 0,
     "allowRotation": true,
     "allowTrim": true,

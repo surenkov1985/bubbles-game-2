@@ -13,6 +13,7 @@ let App = {
 	assets: {},
 	screens: [],
 	stage: null,
+	score: null,
 
 	init: function () {
 
