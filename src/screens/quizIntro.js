@@ -5,6 +5,7 @@ export class QuizIntro extends Screen {
 		super();
 
 		this.name = "QuizIntro";
+		this.isStarted = false;
 
 		this.containers = [
 
@@ -41,7 +42,7 @@ export class QuizIntro extends Screen {
 				{ name: "quiz_text", type: "text", text: "Насколько хорошо ты знаешь Minecraft", alpha: 0, positionPortrait: [0, -50], positionLandscape: [400, -100], styles: { fill: 0x000000, fontSize: 72, fontWeight: 700, _wordWrap: true, wordWrapWidth: 800, align: "center" } },
 
 				// кнопка старт
-				{ name: "quiz_start cont", elasted: 0, initScale : 1,rubberScale : 0, alpha: 0, positionPortrait: [0, 200], positionLandscape: [400, 200], children: [
+				{ name: "quiz_start cont", elasted: 0, initScale : 1,rubberScale : 0, alpha: 1, positionPortrait: [0, 200], positionLandscape: [400, 200], children: [
 					{ name: "quiz_start_bg button", button: "start", type: "sprite", image: "quiz_button.png", children: [
 						{ name: "quiz_name_text", type: "text", text: "Пройти опрос", styles: { fill: 0xffffff, fontSize: 60, fontWeight: 600 } },
 					]},
@@ -70,33 +71,34 @@ export class QuizIntro extends Screen {
 
 		this["quiz_name cont"].y = this["quiz_name cont"].params.position[1] + 100;
 		this["quiz_text"].y = this["quiz_text"].params.position[1] + 50;
-		this["quiz_start cont"].y = this["quiz_start cont"].params.position[1] + 50;
-		this["quiz_character1 cont"].children[0].x = this["quiz_character1 cont"].children[0].params.position[0] - 200.0;
-		this["quiz_character2 cont"].children[0].x = this["quiz_character2 cont"].children[0].params.position[0] + 200.0;
-		this["quiz_character3 cont"].children[0].x = this["quiz_character3 cont"].children[0].params.position[0] - 200.0;
-		this["quiz_character4 cont"].children[0].x = this["quiz_character4 cont"].children[0].params.position[0] + 200.0;
+		
+		this["quiz_start cont"].params.alpha = 1;
+		this["quiz_start cont"].scale.x = 0;
+		this["quiz_start cont"].scale.y = 0;
 
-		console.log(this["quiz_character1 cont"])
+		this["quiz_character1 cont"].children[0].params.alpha = 0;
+		this["quiz_character2 cont"].children[0].params.alpha = 0;
+		this["quiz_character3 cont"].children[0].params.alpha = 0;
+		this["quiz_character4 cont"].children[0].params.alpha = 0;
 
 		GSAP.timeline()
 			.to(this["quiz_name cont"], {alpha: 1, scaleX: 1.1, scaleY: 1.1, duration: 0.3})
 			.to(this["quiz_name cont"], {scaleX: 1, scaleY: 1, duration: 0.3})
-			.to(this["quiz_text"], {y: this["quiz_text"].params.position[1], alpha: 1, duration: 0.4 })
-			.to(this["quiz_start cont"], {y: this["quiz_start cont"].params.position[1], alpha: 1, duration: 0.4 })
-			.to(this["quiz_character1 cont"].children[0], {x: this["quiz_character1 cont"].children[0].params.position[0], alpha: 1, duration: 0.4 })
-			.to(this["quiz_character2 cont"].children[0], {x: this["quiz_character2 cont"].children[0].params.position[0], alpha: 1, duration: 0.4 })
-			.to(this["quiz_character3 cont"].children[0], {x: this["quiz_character3 cont"].children[0].params.position[0], alpha: 1, duration: 0.4 })
-			.to(this["quiz_character4 cont"].children[0], {x: this["quiz_character4 cont"].children[0].params.position[0], alpha: 1, duration: 0.4 })
+			.to(this["quiz_text"], {y: this["quiz_text"].params.position[1], alpha: 1, duration: 0.3 })
+			.to(this["quiz_start cont"], {scaleX: this["quiz_start cont"].params.initScale, scaleY: this["quiz_start cont"].params.initScale, duration: 0.5, ease: "back.out" }).to([this["quiz_character1 cont"].children[0],this["quiz_character2 cont"].children[0],this["quiz_character3 cont"].children[0],this["quiz_character4 cont"].children[0]], { alpha: 1, duration: 1})
 			.then(() => {
 				this["quiz_name cont"].params.alpha = 1;
 				this["quiz_text"].params.alpha = 1;
-				this["quiz_start cont"].params.alpha = 1;
+				// this["quiz_start cont"].params.alpha = 1;
 				this["quiz_character1 cont"].children[0].params.alpha = 1;
 				this["quiz_character2 cont"].children[0].params.alpha = 1;
 				this["quiz_character3 cont"].children[0].params.alpha = 1;
 				this["quiz_character4 cont"].children[0].params.alpha = 1;
 
+				this.isStarted = true;
 			})
+
+
 
 
 	}
@@ -123,23 +125,26 @@ export class QuizIntro extends Screen {
 
 	update(dt) {
 
-		this["quiz_start cont"].params.elasted += dt;
-		this["quiz_start cont"].params.rubberScale = Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 30.0) / 60;
+		if (this.isStarted) {
 
-		this["quiz_start cont"].scaleX = this["quiz_start cont"].params.initScale + this["quiz_start cont"].params.rubberScale;
-		this["quiz_start cont"].scaleY = this["quiz_start cont"].params.initScale + this["quiz_start cont"].params.rubberScale;
+			this["quiz_start cont"].params.elasted += dt;
+			this["quiz_start cont"].params.rubberScale = Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 20.0) / 70;
 
-		this["quiz_character1 cont"].children[0].x = this["quiz_character1 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 40.0) * 2;
-		this["quiz_character1 cont"].children[0].y = this["quiz_character1 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 50.0) * 2;
+			this["quiz_start cont"].scaleX = this["quiz_start cont"].params.initScale + this["quiz_start cont"].params.rubberScale;
+			this["quiz_start cont"].scaleY = this["quiz_start cont"].params.initScale + this["quiz_start cont"].params.rubberScale;
 
-		this["quiz_character2 cont"].children[0].x = this["quiz_character2 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 30.0) * 2;
-		this["quiz_character2 cont"].children[0].y = this["quiz_character2 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 40.0) * 2;
+			this["quiz_character1 cont"].children[0].x = this["quiz_character1 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 40.0) * 2;
+			this["quiz_character1 cont"].children[0].y = this["quiz_character1 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 50.0) * 2;
 
-		this["quiz_character3 cont"].children[0].x = this["quiz_character3 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 30.0) * 2;
-		this["quiz_character3 cont"].children[0].y = this["quiz_character3 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 35.0) * 2;
+			this["quiz_character2 cont"].children[0].x = this["quiz_character2 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 30.0) * 2;
+			this["quiz_character2 cont"].children[0].y = this["quiz_character2 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 40.0) * 2;
 
-		this["quiz_character4 cont"].children[0].x = this["quiz_character4 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 25.0) * 2;
-		this["quiz_character4 cont"].children[0].y = this["quiz_character4 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 35.0) * 2;
+			this["quiz_character3 cont"].children[0].x = this["quiz_character3 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 30.0) * 2;
+			this["quiz_character3 cont"].children[0].y = this["quiz_character3 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 35.0) * 2;
+
+			this["quiz_character4 cont"].children[0].x = this["quiz_character4 cont"].children[0].params.position[0] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 25.0) * 2;
+			this["quiz_character4 cont"].children[0].y = this["quiz_character4 cont"].children[0].params.position[1] + Math.sin((Math.PI * this["quiz_start cont"].params.elasted) / 35.0) * 2;
+		}
 
 	}
 }
