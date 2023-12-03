@@ -8,6 +8,8 @@ export class Quiz extends Screen {
 
 		this.score = 0;
 
+		this.isStarted = false;
+
 		this.quiz = {
 			questions: [
 				{quest: "На сколько блоков дается эффект от маяка?",
@@ -51,7 +53,7 @@ export class Quiz extends Screen {
 		this.containers = [
 
 			// контейнер вопросов
-			{ name: "quests cont", children: [
+			{ name: "quests cont", alpha: 0, children: [
 
 				// фон контейнера вопросов
 				{ name: "bg cont", children: [{ name: "bg", type: "sprite", image: "quiz_bg.png", scaleType: "coverScreen" }] },
@@ -59,9 +61,9 @@ export class Quiz extends Screen {
 				// вопросы
 				{ name: "questions cont", children: [...this.quiz.questions.map((item, index) => {
 
-					return { name: `question${index + 1} cont`, visible: index === this.quiz.questions.length - 1, children: [
-						{ name: "hero card", type: "sprite", image: `quiz_character_${index + 1}.png`, positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8, },
-						{ name: "quest", type: "text", text: item.quest, positionPortrait: [0, -200], positionLandscape: [400, -300],styles: {
+					return { name: `question${index + 1} cont`, active: false, visible: index === this.quiz.questions.length - 1, children: [
+						{ name: "hero card", type: "sprite", alpha: 0, elasted: 1, image: `quiz_character_${index + 1}.png`, positionPortrait: [0, -400], positionLandscape: [-500, 0], scale: 0.8, },
+						{ name: "quest", type: "text", text: item.quest, alpha: 0, positionPortrait: [0, -200], positionLandscape: [400, -300],styles: {
 							fontSize: 80,
 							fontFamily: "Arial",
 							fontWeight: 700,
@@ -106,18 +108,27 @@ export class Quiz extends Screen {
 	built() {}
 
 	shown() {
-		const questions = this["question1 cont"].children[2].children;
 
-		let delay = 0.0;
-		questions.forEach((quest) => {
-			let defPosY = quest.params.position[1];
-			delay += 0.1;
-			quest.y = defPosY + 50;
-			quest.alpha = 0;
-			GSAP.timeline()
-				.to(quest, { y: defPosY - 10, alpha: 1, duration: 0.2, ease: "power1.out" }, delay)
-				.to(quest, { y: defPosY, duration: 0.2, ease: "power1.out" });
-		});
+		this.activateQuestion(this["question5 cont"]);
+	}
+
+	update(dt) {
+
+		if (this.isStarted) {
+
+			for (let i = this["questions cont"].children.length - 1; i >= 0; i--) {
+
+				if (this["questions cont"].children[i].active) {
+
+					const hero = this["questions cont"].children[i].children[0];
+
+					hero.params.elasted += dt;
+
+					hero.x = hero.params.position[0] + Math.sin((Math.PI * hero.params.elasted) / 40.0) * 2;
+					hero.y = hero.params.position[1] + Math.sin((Math.PI * hero.params.elasted) / 50.0) * 2;
+				}
+			}
+		}
 	}
 
 	/////////////////////////////////////////////////
@@ -125,7 +136,6 @@ export class Quiz extends Screen {
 	pulseButton(container) {
 		if (!container) return;
 
-		const questionContainer = container.parent.parent;
 		const responses = container.parent;
 		const responseIndex = responses.children.indexOf(container);
 
@@ -137,6 +147,7 @@ export class Quiz extends Screen {
 			resp.children[1].visible = false;
 
 			if (index === responseIndex) {
+
 				GSAP.timeline()
 					.to(resp, { scaleX: 1.1, scaleY: 1.1, duration: 0.1 })
 					.to(resp, { scaleX: 0, scaleY: 0, duration: 0.3, ease: "elastic.out" }, 0.7)
@@ -144,6 +155,7 @@ export class Quiz extends Screen {
 						this.toggleQuestion(container);
 					});
 			} else {
+
 				GSAP.timeline()
 					.to(resp, { scaleX: 0, scaleY: 0, duration: 0.3 }, 0.5)
 			}
@@ -161,18 +173,54 @@ export class Quiz extends Screen {
 
 			questionContainer.visible = false;
 			questionContainer.params.visible = false;
+			this.activateQuestion(questionsContainer.children[questionIndex - 1])
 			questionsContainer.children[questionIndex - 1].visible = true;
 			questionsContainer.children[questionIndex - 1].params.visible = true;
+
 		} else if (questionIndex === 0){
 
 			questionContainer.visible = false;
 			questionContainer.params.visible = false;
+
 			App.QuizCTA.score = this.score;
-			console.log(App.score)
+
 			App.Quiz.hide();
 			App.QuizCTA.show();
 		}
 
+	}
+
+	activateQuestion(container) {
+
+		const questions = container.children[2].children;
+		const text = container.children[1];
+		const hero = container.children[0];
+
+		text.y = text.params.position[1] + 100;
+
+		const tl = GSAP.timeline();
+
+		tl.to(this["quests cont"], {alpha: 1, duration:0.5});
+		tl.to(text, {alpha:1, y: text.params.position[1], duration: 0.3});
+		tl.to(hero, {alpha: 1, duration: 0.5});
+
+		let delay = 0.0;
+		questions.forEach((quest) => {
+			let defPosY = quest.params.position[1];
+			delay += 0.1;
+			quest.y = defPosY + 50;
+			quest.alpha = 0;
+			tl
+				.to(quest, { y: defPosY, alpha: 1, duration: 0.5, ease: "power1.out" }, delay)
+				.then(() => {
+					this.isStarted = true;
+					text.params.alpha = 1;
+					hero.params.alpha = 1;
+					this["quests cont"].params.alpha = 1;
+					container.active = true;
+					container.params.active = true;
+				});
+		});
 	}
 
 }

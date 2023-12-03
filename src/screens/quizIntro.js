@@ -71,7 +71,7 @@ export class QuizIntro extends Screen {
 
 		this["quiz_name cont"].y = this["quiz_name cont"].params.position[1] + 100;
 		this["quiz_text"].y = this["quiz_text"].params.position[1] + 50;
-		
+
 		this["quiz_start cont"].params.alpha = 1;
 		this["quiz_start cont"].scale.x = 0;
 		this["quiz_start cont"].scale.y = 0;
@@ -117,9 +117,13 @@ export class QuizIntro extends Screen {
 	}
 
 	startedQuiz(container) {
+		GSAP.timeline()
+			.to(this['menu cont'], {alpha: 0, duration: 0.5})
+			.then(() => {
+				App.QuizIntro.hide();
+				App.Quiz.show()
+			});
 
-		App.QuizIntro.hide();
-		App.Quiz.show()
 
 	}
 
