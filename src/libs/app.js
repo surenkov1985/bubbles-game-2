@@ -25,6 +25,8 @@ let App = {
 			resolution: window.devicePixelRatio || 1,
 		});
 
+		globalThis.__PIXI_APP__ = this.app;
+
 		this.appContainer = document.getElementById('app');
 		this.appContainer.appendChild(this.app.view);
 

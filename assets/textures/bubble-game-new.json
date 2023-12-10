@@ -1,0 +1,303 @@
+{
+  "frames": {
+    "ui_bg.png": {
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 1080,
+        "h": 217
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 1080,
+        "h": 217
+      },
+      "sourceSize": {
+        "w": 1080,
+        "h": 217
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pause_bg.png": {
+      "frame": {
+        "x": 1,
+        "y": 220,
+        "w": 990,
+        "h": 804
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 990,
+        "h": 804
+      },
+      "sourceSize": {
+        "w": 990,
+        "h": 804
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "menu_text.png": {
+      "frame": {
+        "x": 1,
+        "y": 1026,
+        "w": 733,
+        "h": 382
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 733,
+        "h": 382
+      },
+      "sourceSize": {
+        "w": 733,
+        "h": 382
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "menu_play_btn.png": {
+      "frame": {
+        "x": 1083,
+        "y": 1,
+        "w": 530,
+        "h": 530
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 530,
+        "h": 530
+      },
+      "sourceSize": {
+        "w": 530,
+        "h": 530
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "heart_bubble.png": {
+      "frame": {
+        "x": 736,
+        "y": 1026,
+        "w": 248,
+        "h": 241
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 248,
+        "h": 241
+      },
+      "sourceSize": {
+        "w": 248,
+        "h": 241
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bomb_bubble.png": {
+      "frame": {
+        "x": 979,
+        "y": 1026,
+        "w": 248,
+        "h": 247
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 248,
+        "h": 247
+      },
+      "sourceSize": {
+        "w": 248,
+        "h": 247
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bubble.png": {
+      "frame": {
+        "x": 1228,
+        "y": 533,
+        "w": 248,
+        "h": 248
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 248,
+        "h": 248
+      },
+      "sourceSize": {
+        "w": 248,
+        "h": 248
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pause_btn.png": {
+      "frame": {
+        "x": 993,
+        "y": 533,
+        "w": 200,
+        "h": 200
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 200
+      },
+      "sourceSize": {
+        "w": 200,
+        "h": 200
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pause_exit_btn.png": {
+      "frame": {
+        "x": 993,
+        "y": 735,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pause_play_btn.png": {
+      "frame": {
+        "x": 1171,
+        "y": 783,
+        "w": 176,
+        "h": 176
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 176,
+        "h": 176
+      },
+      "sourceSize": {
+        "w": 176,
+        "h": 176
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "ui_heart.png": {
+      "frame": {
+        "x": 993,
+        "y": 913,
+        "w": 97,
+        "h": 94
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 94
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 94
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "particle.png": {
+      "frame": {
+        "x": 1089,
+        "y": 913,
+        "w": 66,
+        "h": 65
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 66,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 66,
+        "h": 65
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "bubble-game-new.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1614,
+      "h": 1409
+    },
+    "scale": 1
+  }
+}

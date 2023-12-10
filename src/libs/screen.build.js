@@ -46,6 +46,7 @@ export default {
 
 		}
 
+
 		if (result) {
 
 			result.params = params;
@@ -87,7 +88,7 @@ export default {
 		});
 		obj.on('pointerover', (e) => {
 			EE.emit(screen.name + ' ' + event + ' Over', obj, e);
-			console.log(666)
+			// console.log(666)
 		});
 		// obj.on('pointerout', (event) => {
 		// 	console.log(666)
