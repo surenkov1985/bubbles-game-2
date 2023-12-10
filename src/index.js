@@ -1,4 +1,6 @@
 import * as PIXI from "pixi.js";
+// import { sound } from '@pixi/sound';
+import '@pixi/sound';
 import assets from "./assets";
 import Loader from "./libs/loader";
 import App from "./libs/app";

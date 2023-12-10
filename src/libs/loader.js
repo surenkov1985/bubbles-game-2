@@ -111,10 +111,13 @@ const Loader = {
 
 		for (let i = 0; i < audio.length; i++) {
 
-			let name = audio[i].name;
-			let url = audio[i].url;
+			const sound = {...audio[i]};
+			let name = sound.name;
+			let url = sound.url;
+			delete sound.name;
+			delete sound.url;
 
-			PIXI.Assets.add({alias: name, src: url, data: {preload: true}});
+			PIXI.Assets.add({alias: name, src: url, data: {preload: true, ...sound}});
 
 			names.push(name);
 		}

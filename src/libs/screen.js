@@ -1,4 +1,5 @@
 
+import CommonMixin from './screen.common';
 import BuildMixin from './screen.build';
 import App from "./app";
 
@@ -75,4 +76,5 @@ export default class Screen extends PIXI.Container {
 	}
 }
 
+Object.assign(Screen.prototype, CommonMixin);
 Object.assign(Screen.prototype, BuildMixin);

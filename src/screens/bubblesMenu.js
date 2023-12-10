@@ -26,6 +26,8 @@ export default class BubblesMenu extends Screen {
 			"BubblesMenu start Down": function (container) {
 
 				this.pulseButton(container);
+
+				this.playSound('click.ogg');
 			}
 		};
 	}
